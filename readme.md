@@ -1,10 +1,10 @@
 # Card Wars Kingdom Reversed-Engineered Server
 
-This is a reversed-engineered server for Card Wars Kingdom, designed for version 1.0.16 avliable here: https://github.com/shishkabob27/CardWarsKingdom.
+This is a reversed-engineered server for Card Wars Kingdom, designed for version 1.0.17 available here: https://github.com/shishkabob27/CardWarsKingdom.
 
 **Disclaimer**: This server is intended for use only by individuals you trust, as it lacks essential security measures in this version.
 
-Blueprints are sourced from the original CWK.
+Blueprints are sourced from the original CWK and may require changes.
 
 ## Setup
 
