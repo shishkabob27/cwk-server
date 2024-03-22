@@ -1,0 +1,9 @@
+{% extends "admin_base.html" %}
+{% block content %}
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Backups</h1>
+	</div>
+
+	<p>Last Backup: {{ last_backup }}</p>
+	<a href="/admin/server/backup" class="btn btn-primary">Backup</a>
+{% endblock %}

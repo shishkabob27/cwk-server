@@ -1,0 +1,118 @@
+{% extends "admin_base.html" %}
+{% block content %}
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">{{ player.multiplayer_name }}</h1>
+	</div>
+
+	<!--Ban button-->
+
+	{% if is_banned %}
+		<a href="/admin/players/{{ player.username }}/unban" class="btn btn-success">Unban</a>
+	{% else %}
+		<a href="/admin/players/{{ player.username }}/ban" class="btn btn-danger">Ban</a>
+	{% endif %}
+
+	<a href="/admin/players/{{ player.username }}/game" class="btn btn-primary">View save</a>
+
+	<hr>
+
+	<p>ID: {{ player.username }}</p>
+	<p>Device Name: {{ DeviceName }}</p>
+	<p>Rank: {{ player.leader_level }}</p>
+	<p>Last Online: {{ player.last_online }}</p>
+	<p>Help Count: {{ player.helpcount }}</p>
+	<p>Annonyous Help Count: {{ player.anonymoushelpcount }}</p>
+	<p>Ally Box Space: {{ player.allyboxspace }}</p>
+	<p>Helper: {{ player.helper_creature }}</p>
+
+	<h3>Save:</h3>
+	<div class="table-responsive small">
+		<table class="table table-striped table-sm">
+		<thead>
+			<tr>
+			<th scope="col">Key</th>
+			<th scope="col">Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Coins</td>
+				<td>{{ SoftCurrency }}</td>
+			</tr>
+			<tr>
+				<td>Gems</td>
+				<td>{{ HardCurrency }}</td>
+			</tr>
+			<tr>
+				<td>Wishbones</td>
+				<td>{{ PvpCurrency }}</td>
+			</tr>
+			<tr>
+				<td>Inventory Space</td>
+				<td>{{ InventorySpace }}</td>
+			</tr>
+			<tr>
+				<td>Installed Date</td>
+				<td>{{ InstalledDate }}</td>
+			</tr>
+			<tr>
+				<td>Is PVP Banned</td>
+				<td>{{ PVPBanned }}</td>
+			</tr>
+			<tr>
+				<td>Multiplayer Rank</td>
+				<td>{{ MultiplayerLevel }}</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+
+	<h3>Battle History:</h3>
+	<div class="table-responsive small">
+		<table class="table table-striped table-sm">
+		<thead>
+			<tr>
+			<th scope="col">Time</th>
+			<th scope="col">Opponent</th>
+			<th scope="col">Opponent ID</th>
+			<th scope="col">Season</th>
+			<th scope="col">Winner?</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in BattleHistory %}
+			<tr>
+				<td>{{ item.recordTime }}</td>
+				<td>{{ item.opponentName }}</td>
+				<td><a href="/admin/players/{{ item.opponentId }}">{{ item.opponentId }}</a></td>
+				<td>{{ item.season }}</td>
+				<td>{{ item.youWon }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		</table>
+	</div>
+
+	<h3>Creatures:</h3>
+	<div class="table-responsive small">
+		<table class="table table-striped table-sm">
+		<thead>
+			<tr>
+				<th scope="col">Creature</th>
+				<th scope="col">XP</th>
+				<th scope="col">Star Rating</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in Inventory %}
+			<tr>
+				<td>{{ item.ID }}</td>
+				<td>{{ item.Xp }}</td>
+				<td>{{ item.StarRating }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		</table>
+	</div>
+{% endblock %}

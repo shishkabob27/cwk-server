@@ -1,2 +1,6 @@
 flask
 flask_sqlalchemy
+flask_login
+flask_bcrypt
+schedule
+discord-webhook

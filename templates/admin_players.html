@@ -1,0 +1,45 @@
+{% extends "admin_base.html" %}
+{% block content %}
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">All {{ player_count }} players</h1>
+	</div>
+
+	<div class="dropdown show">
+		<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle='dropdown' aria-haspopup="true" aria-expanded="false">
+			Sort by
+		</a>
+	  
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<a class="dropdown-item" href ="/admin/players">Creation Date</a>
+			<a class="dropdown-item" href ="/admin/players?sort=multiplayer_name">Name</a>
+			<a class="dropdown-item" href="/admin/players?sort=last_online">Last online</a>
+			<a class="dropdown-item" href ="/admin/players?sort=leader_level">Rank</a>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="table-responsive small">
+		<table class="table table-striped table-sm">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Name</th>
+					<th scope="col">Rank</th>
+					<th scope="col">Last Online</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for player in players %}
+				<tr>
+					<td>{{ player.username }}</td>
+					<td>{{ player.multiplayer_name }}</td>
+					<td>{{ player.leader_level }}</td>
+					<td>{{ player.last_online }}</td>
+					<td><a href="/admin/players/{{ player.username }}">View details</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "admin_base.html" %}
+{% block content %}
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Dashboard</h1>
+	</div>
+	<br>
+	<h4>Recent Activity</h4>
+	<div class="table-responsive small table-bordered" style="max-height: 500px;">
+		<table class="table table-striped table-sm">
+		<thead>
+			<tr>
+			<th scope="col">Time</th>
+			<th scope="col">Message</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in Activity %}
+			<tr>
+				<td>{{ item.time }}</td>
+				<td>{{ item.message }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		</table>
+	</div>
+
+	<script>
+		var table = document.querySelector('table');
+		var rows = table.querySelectorAll('tr');
+		for (var i = 0; i < rows.length; i++) {
+			var cells = rows[i].querySelectorAll('td');
+			if (cells.length > 1) {
+				var cell = cells[1];
+				var text = cell.textContent;
+				var uuid = text.match(/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/i);
+				if (uuid) {
+					var link = '<a href="/admin/players/' + uuid[0] + '">' + uuid[0] + '</a>';
+					cell.innerHTML = text.replace(uuid[0], link);
+				}
+			}
+		}
+	</script>
+{% endblock %}

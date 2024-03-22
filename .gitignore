@@ -156,4 +156,7 @@ data/*
 data/persist/*
 !data/persist/blueprints/
 !data/persist/manifest.json
+backup/*
 version.txt
+flaskkey
+discordwebhookurl

@@ -1,0 +1,40 @@
+{% extends "admin_base.html" %}
+{% block content %}
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Banned IPs</h1>
+	</div>
+
+	<br>
+	<form class="row g-3" method="post" action="/admin/ipban">
+		<div class="col-auto" style="width: 340px;">
+		  <input type="text" class="form-control" id="ip" name="ip" placeholder="IP">
+		</div>
+		<div class="col-auto">
+		  <button type="submit" class="btn btn-primary mb-3">Ban</button>
+		</div>
+	</form>
+	<br>
+
+	<div class="table-responsive small">
+		<table class="table table-striped table-sm">
+			<thead>
+				<tr>
+					<th scope="col">IP</th>
+					<th scope="col">Banned by</th>
+					<th scope="col">Time</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for ban in bans %}
+				<tr>
+					<td>{{ ban.username }}</td>
+					<td>{{ ban.author }}</td>
+					<td>{{ ban.time }}</td>
+					<td><a href="/admin/ipban/{{ ban.username }}/unban">Unban</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

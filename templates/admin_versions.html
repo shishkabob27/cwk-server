@@ -1,0 +1,27 @@
+{% extends "admin_base.html" %}
+{% block content %}
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Versions</h1>
+	</div>
+
+	<p>Current PC version: {{ pc_version }}</p>
+	<p>Current Android version: {{ android_version }}</p>
+
+  	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Update</h1>
+	</div>
+	
+	<form method="post">
+		<div class="form-group">
+			<label for="pc_version">PC version</label>
+			<input type="text" class="form-control" id="pc_version" name="pc_version" value="{{ pc_version }}" required>
+		</div>
+		<br>
+		<div class="form-group">
+			<label for="android_version">Android version</label>
+			<input type="text" class="form-control" id="android_version" name="android_version" value="{{ android_version }}" required>
+		</div>
+		<br>
+		<button type="submit" class="btn btn-primary">Update</button>
+	</form>
+{% endblock %}

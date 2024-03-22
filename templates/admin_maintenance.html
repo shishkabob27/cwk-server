@@ -1,0 +1,15 @@
+{% extends "admin_base.html" %}
+{% block content %}
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Maintenance</h1>
+	</div>
+
+	<p>Maintenance: {{ maintenance }}</p>
+
+	{% if maintenance %}
+		<a href="/admin/maintenance/disable" class="btn btn-primary">Disable</a>
+	{% else %}
+		<a href="/admin/maintenance/enable" class="btn btn-primary">Enable</a>
+	{% endif %}
+
+{% endblock %}

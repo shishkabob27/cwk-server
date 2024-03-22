@@ -1,6 +1,6 @@
 # Card Wars Kingdom Reversed-Engineered Server
 
-This is a reversed-engineered server for Card Wars Kingdom, designed for version 1.0.17 available here: https://github.com/shishkabob27/CardWarsKingdom.
+This is a reversed-engineered server for Card Wars Kingdom, designed for version 1.0.17 but it should also work with 1.19 available here: https://github.com/shishkabob27/CardWarsKingdom.
 
 **Disclaimer**: This server is intended for use only by individuals you trust, as it lacks essential security measures in this version.
 
@@ -16,13 +16,9 @@ Blueprints are sourced from the original CWK and may require changes.
 
 To run the server, use one of the following methods:
 
-- Using Python: `python app.py`
-- Using Gunicorn: `gunicorn app:app app.py`
+- Using Python: `python3 app.py`
+- Using Gunicorn: `gunicorn app:app`
 
 ## Additional Setup
 
 It is recommended to set up Chat and PUN servers with [Photon](https://www.photonengine.com/) if you want to play PVP and use chat exclusively with users of your server.
-
-## Questions and Support
-
-For any issues or questions, please feel free to DM me on Discord, @shishkabob.org

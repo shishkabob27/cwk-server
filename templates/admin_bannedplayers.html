@@ -1,0 +1,31 @@
+{% extends "admin_base.html" %}
+{% block content %}
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Banned Players</h1>
+	</div>
+
+	<div class="table-responsive small">
+		<table class="table table-striped table-sm">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Name</th>
+					<th scope="col">Banned by</th>
+					<th scope="col">Time</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for ban in bans %}
+				<tr>
+					<td>{{ ban.username }}</td>
+					<td>{{ ban.multiplayer_name }}</td>
+					<td>{{ ban.author }}</td>
+					<td>{{ ban.time }}</td>
+					<td><a href="/admin/players/{{ ban.username }}">View Player</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

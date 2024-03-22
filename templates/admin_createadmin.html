@@ -1,0 +1,19 @@
+{% extends "admin_base.html" %}
+{% block content %}
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Create Admin</h1>
+	</div>
+
+	<form method="post">
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" class="form-control" id="username" name="username" required>
+		</div>
+		<br>
+		<div class="form-group">
+			<label for="rank">Rank</label>
+			<input type="number" class="form-control" id="rank" name="rank" required>
+		<br>
+		<button type="submit" class="btn btn-primary">Create</button>
+	</form>
+{% endblock %}
