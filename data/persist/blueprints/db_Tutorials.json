@@ -1,7 +1,5 @@
 [
-	{"State":"IN_Start","Block":"IntroBattle","Trigger":"FTUE","ForceAction":"StartHand: CORN_0001, PLAINS_0001, PLAINS_0004, CORN_0006;
-StartHandEnemy: CORN_0001, CORN_0004, TUT_PLAINS_0002;
-StartAP:5; StartAPEnemy:5;","tutorialBoard":"IntroBattle"},
+	{"State":"IN_Start","Block":"IntroBattle","Trigger":"FTUE","ForceAction":"StartHand: CORN_0001, PLAINS_0001, PLAINS_0004, CORN_0006; StartHandEnemy: CORN_0001, CORN_0004, TUT_PLAINS_0002; StartAP:5; StartAPEnemy:5;","tutorialBoard":"IntroBattle"},
 	{"State":"IN_TextIntro","StartDelay":"0.7","EntryFunctionCall":"CameraToP2","PopupX":"0","PopupY":"-100","Target":"Floating","Text":"!!TUT_IN_TEXTINTRO_0","VO":"TUT_IN_TEXTINTRO_0","TextTitle":"!!Leader_JakeKing_NAME"},
 	{"State":"IN_TextIntro_1","StartDelay":"0.7","EntryFunctionCall":"CameraToP1","PopupX":"0","PopupY":"-250","Target":"Floating","Text":"!!TUT_IN_TEXTINTRO_1","VO":"TUT_IN_TEXTINTRO_1","TextTitle":"!!Leader_Jake_NAME"},
 	{"State":"IN_TextIntro_2","StartDelay":"0.7","EntryFunctionCall":"CameraToP2","PopupX":"0","PopupY":"-100","Target":"Floating","Text":"!!TUT_IN_TEXTINTRO_2","VO":"TUT_IN_TEXTINTRO_2","TextTitle":"!!Leader_JakeKing_NAME"},
@@ -49,8 +47,7 @@ StartAP:5; StartAPEnemy:5;","tutorialBoard":"IntroBattle"},
 	{"State":"Q1_Welcome","PopupX":"0","PopupY":"200","Target":"TapBuilding: TBuilding_Quests","Text":"!!TUT_Q1_ARENA","VO":"TUT_Q1_ARENA"},
 	{"State":"Q1_LeagueList","Target":"League: League1","Text":"!!TUT_Q1_LEAGUELIST","VO":"TUT_Q1_LEAGUELIST"},
 	{"State":"Q1_QuestList","Target":"Quest: 1","Text":"!!TUT_Q1_QUESTLIST","VO":"TUT_Q1_QUESTLIST"},
-	{"State":"Q1_Start","ManualAdvance":"True","EntryFunctionCall":"HideArenaTeamDescriptionBox","ExitFunctionCall":"ShowArenaTeamDescriptionBox","ForceAction":"StartHand: NICE_0019, NICE_0003, NICE_0001, NICE_0030, NICE_0017, PLAINS_0026, PLAINS_0001, PLAINS_0008, PLAINS_0002, PLAINS_0026, CORN_0024, CORN_0004, CORN_0003, CORN_0022;
-StartHandEnemy: CORN_0001, CORN_0004, PLAINS_0020;","PopupX":"230","PopupY":"0","Target":"Floating","Text":"!!TUT_IN_STARTTEAM","VO":"TUT_IN_STARTTEAM"},
+	{"State":"Q1_Start","ManualAdvance":"True","EntryFunctionCall":"HideArenaTeamDescriptionBox","ExitFunctionCall":"ShowArenaTeamDescriptionBox","ForceAction":"StartHand: NICE_0019, NICE_0003, NICE_0001, NICE_0030, NICE_0017, PLAINS_0026, PLAINS_0001, PLAINS_0008, PLAINS_0002, PLAINS_0026, CORN_0024, CORN_0004, CORN_0003, CORN_0022; StartHandEnemy: CORN_0001, CORN_0004, PLAINS_0020;","PopupX":"230","PopupY":"0","Target":"Floating","Text":"!!TUT_IN_STARTTEAM","VO":"TUT_IN_STARTTEAM"},
 	{"State":"Q1_Intro","PopupX":"0","PopupY":"-100","Target":"Floating","Text":"!!TUT_Q1_INTRO","VO":"TUT_Q1_INTRO"},
 	{"State":"Q1_Conditionals","EntryFunctionCall":"CheckCardOnHand","Target":"Conditionals: Q1Conditions"},
 	{"State":"Q1_LevelUp","PopupX":"0","PopupY":"-250","Target":"PointObject","Text":"!!TUT_Q1_LVLUP","VO":"TUT_Q1_LVLUP"},
