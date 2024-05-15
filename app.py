@@ -589,6 +589,50 @@ def Backup():
 	return True
 
 @login_required
+@app.route("/admin/misc")
+def AdminMisc():
+	if not isAdmin(current_user):
+		return abort(404)
+
+	return render_template('admin_misc.html')
+
+@login_required
+@app.route("/admin/logs/delete/olderthan/<days>")
+def AdminLogsDeleteOlderThan(days):
+	if not isAdmin(current_user):
+		return abort(404)
+
+	#convert days to seconds
+	days = int(days)
+	seconds = days * 86400
+
+	#delete logs older than x days
+	db.session.query(Logs).filter(Logs.time < int(time.time()) - seconds).delete()
+	db.session.commit()
+ 
+	Log("admin", current_user.username + " deleted logs older than " + str(days) + " days")
+ 
+	return redirect("/admin/logs")
+
+@login_required
+@app.route("/admin/upsight/delete/olderthan/<days>")
+def AdminUpsightDeleteOlderThan(days):
+	if not isAdmin(current_user):
+		return abort(404)
+
+	#convert days to seconds
+	days = int(days)
+	seconds = days * 86400
+
+	#delete logs older than x days
+	db.session.query(UpsightLogs).filter(UpsightLogs.time < int(time.time()) - seconds).delete()
+	db.session.commit()
+ 
+	Log("admin", current_user.username + " deleted upsight logs older than " + str(days) + " days")
+ 
+	return redirect("/admin/upsight")
+
+@login_required
 @app.route("/admin/logs", methods=['GET'])
 def AdminLogs():
 	if not isAdmin(current_user):

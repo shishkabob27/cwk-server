@@ -1,0 +1,9 @@
+{% extends "admin_base.html" %}
+{% block content %}
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Logs</h1>
+	</div>
+
+	<a href="/admin/logs/delete/olderthan/14" class="btn btn-danger">Delete logs older than 14 days</a>
+	<a href="/admin/upsight/delete/olderthan/14" class="btn btn-danger">Delete Upsight logs older than 14 days</a>
+{% endblock %}
