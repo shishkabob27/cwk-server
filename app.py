@@ -389,12 +389,38 @@ def AdminPlayerGame(player):
 
 	player = player.as_dict()
  
-	game = DecryptGameData(player["game"])
+	try:
+		game = DecryptGameData(player["game"])
+	except Exception: #save is most likely not encrypted
+		game = player["game"]
+
  
 	if game is None:
 		return make_response("No game found!", 404)
 
-	return jsonify(game)
+	return render_template('admin_player_game.html', game=game, player_id=player["username"])
+
+@login_required
+@app.route("/admin/players/<player>/game/edit", methods=['POST'])
+def AdminPlayerGameEdit(player):
+	if not isAdmin(current_user):
+		return abort(404)
+
+	player = Player.query.filter_by(username=player).first()
+ 
+	if player is None:
+		return make_response("No player found!", 404)
+
+	#get game from post
+	game = request.form['player_game']
+	print(game)
+	#update game
+	player.game = game
+	db.session.commit()
+ 
+	Log("admin", current_user.username + " edited game data for player: " + player.username)
+ 
+	return redirect("/admin/players/" + player.username)
 
 def DecryptGameData(game:str):
 	if game is None or game == b"" or game == b" ":
