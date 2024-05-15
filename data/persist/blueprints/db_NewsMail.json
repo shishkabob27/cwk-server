@@ -98,13 +98,7 @@
 	{"ID":"PVP_2017_01","Name":"Mint Season now active!","BodyText":"Mint Season  is now active for December! Compete to reach Super Amadeus rank and earn the Algebraic creature Baldman's Throne!","showDate":"01/01/2017","endDate":"16/01/2017"},
 	{"ID":"PVP_2017_02","Name":"Chilly Chili Season now active!","BodyText":"Chilly Chili Season  is now active for December! Compete to reach Super Amadeus rank and earn the Algebraic creature Corn Ronin!","showDate":"01/02/2016","endDate":"16/02/2016"},
 	{"ID":"PVP_2017_03","Name":"Toe Salt Season now active!","BodyText":"Toe Salt Season  is now active for December! Compete to reach Super Amadeus rank and earn the Algebraic creature Cottonsaurus Rex!","showDate":"01/03/2016","endDate":"16/03/2016"},
-	{"ID":"HOTFIX_12_1_2016","Name":"Hotfixes 12/1/2016","BodyText":"The following changes are now live:
-
-- Plain Jane's Passive Ability has been changed to make her more beatable on deploy. Level 1 grants Shield x1 and Max Level is Shield x3.
-
-- Angel of Sand is now an Algebraic Creature.
-
-Additionally, we are aware of the issue with Pirate Bear's Passibe Ability not working when awakened.  This will be fixed in our next client update.","showDate":"30/11/2016","endDate":"15/12/2016"},
+	{"ID":"HOTFIX_12_1_2016","Name":"Hotfixes 12/1/2016","BodyText":"The following changes are now live: \n\n - Plain Jane's Passive Ability has been changed to make her more beatable on deploy. Level 1 grants Shield x1 and Max Level is Shield x3. \n\n - Angel of Sand is now an Algebraic Creature. \n\n Additionally, we are aware of the issue with Pirate Bear's Passibe Ability not working when awakened.  This will be fixed in our next client update.","showDate":"30/11/2016","endDate":"15/12/2016"},
 	{"ID":"HolidayFest_2016_12_01","Name":"Holiday Gift Fest! Day 1!","BodyText":"25 days of gifts in December! Come back everyday to claim your reward. You've received today's gift.","GiftType":"HardCurrency","Quantity":"25","showDate":"01/12/2016","endDate":"04/12/2016"},
 	{"ID":"HolidayFest_2016_12_02","Name":"Holiday Gift Fest! Day 2!","BodyText":"25 days of gifts in December! Come back everyday to claim your reward. You've received today's gift.","GiftType":"PvPCurrency","Quantity":"25","showDate":"02/12/2016","endDate":"04/12/2016"},
 	{"ID":"HolidayFest_2016_12_03","Name":"Holiday Gift Fest! Day 3!","BodyText":"25 days of gifts in December! Come back everyday to claim your reward. You've received today's gift.","GiftType":"XPMaterials","Quantity":"1","GiftID":"CAKE_T3_Corn","showDate":"03/12/2016","endDate":"04/12/2016"},
